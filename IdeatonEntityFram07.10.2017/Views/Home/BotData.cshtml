@@ -1,0 +1,63 @@
+﻿@model IEnumerable<IdeatonEntityFram07._10._2017.Models.RootObject>
+
+@{
+    ViewBag.Title = "BotData";
+}
+
+<h2>BotData</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pohneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptionOfOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._TypeOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lvivRegion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pohneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptionOfOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._TypeOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lvivRegion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
